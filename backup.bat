@@ -1,5 +1,6 @@
 @echo off
 
+REM Version 1.2
 REM Adjust path for the below components. Projects, Libraries and Manager Data folders can be assigned to special locations! Major build number can change after updating BIMcloud! This example here
 REM has the installation date 2022-01-10. You can copy this file and adjust the ServerInstallDate below a to create a another backup of another instance.
 
@@ -23,8 +24,7 @@ REM I added additonal services to the script to stop all Graphisoft Services
 
 set Manager=PortalServerService-v26.0(Manager-%ServerInstallDate%)
 set Server=TeamworkApplicationServerMonitor-v26.0(Server-%ServerInstallDate%)
-set ServiceManager=TeamworkServiceProcessManagerAgent-v26.0(Manager-%ServerInstallDate%)
-set ServiceServer=TeamworkServiceProcessManagerAgent-v26.0(Manager-%ServerInstallDate%)
+
 
 REM set delay between Services stopping and starting. Depending on how fast our Server is and how fast it can robocopy the files to the backup destination
 set delay=60
@@ -74,11 +74,6 @@ ping localhost -n %delay% >nul
 sc stop "%Server%" 
 ping localhost -n %delay% >nul
 
-sc stop "%ServiceManager%" 
-ping localhost -n %delay% >nul
-
-sc stop "%ServiceServer%" 
-ping localhost -n %delay% >nul
 
 
 
@@ -107,10 +102,5 @@ ping localhost -n %delay% >nul
 sc start "%Server%"
 ping localhost -n %delay% >nul
 
-sc start "%ServiceManager%"
-ping localhost -n %delay% >nul
-
-sc start "%ServiceServer%"
-ping localhost -n %delay% >nul
 
 :done
