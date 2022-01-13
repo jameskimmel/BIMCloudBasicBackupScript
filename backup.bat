@@ -1,10 +1,10 @@
 @echo off
 
 REM Version 1.2
-REM Adjust path for the below components. Projects, Libraries and Manager Data folders can be assigned to special locations! Major build number can change after updating BIMcloud! This example here
-REM has the installation date 2022-01-10. You can copy this file and adjust the ServerInstallDate below a to create a another backup of another instance.
+REM Adjust path for the below components. Projects, Libraries and Manager Data folders can be assigned to special locations! The Major build number can change after updating BIMcloud! This example here
+REM has the installation date 2022-01-10. You can copy this file and adjust the ServerInstallDate below to create a another backup of another instance.
 
-REM It is very important, that you don't blindli trust this script to work and test it! Look if it really created all the backup files. You also need to check this after every update!
+REM It is very important, that you don't blindly trust this script to work and test it! Look if it really created all the backup files. You also need to check this after every update!
 
 REM First we set the Server installation date. This date defines all the paths Graphisoft uses. In this example, the date is 2022-01-10
 set ServerInstallDate=2022-01-10
@@ -18,8 +18,8 @@ set LibraryDir=C:\Program Files\GRAPHISOFT\BIMcloud\Server-%ServerInstallDate%\A
 REM Caution! The Backup Directory has to already exist as an empty folder. The script will not create it and fail if it does not exists.
 set localBkUp=D:\BackupPath\BimserverBackup\Server-%ServerInstallDate%
 
-REM Caution! This services can change with every BimCloud Update! You need to take a look at the Windows Services. Even if you use the this script
-REM To backup BimCloud 24 the Service name still changes to the current build Version. In this case v26. With the next update, this could change to v27!
+REM Caution! These services can change with every BimCloud Update! You have to look it up in the Windows "services" application. Even if you use the this script
+REM To backup BimCloud 24, BIMCloud could be on a higher Version and  the service name reflects that Version. By January 2022 the current Version is v26. With the next update, this could change to v27!
 REM I added additonal services to the script to stop all Graphisoft Services
 
 set Manager=PortalServerService-v26.0(Manager-%ServerInstallDate%)
@@ -33,7 +33,7 @@ set delay=60
 
 
 
-REM Editing the script probably not necessary!
+REM Editing the script below should not be necessary!
 
 
 
