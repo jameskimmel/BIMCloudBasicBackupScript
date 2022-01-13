@@ -1,11 +1,18 @@
 # BIMCloudBasicBackupScript
 
-Unfortunatly BIMCloud Basic has no backup option included.
+Unfortunately BIMCloud Basic has no backup option included.
 
-That is why I wrote my own script, based on the v24 backupscript from Graphisoft:
+That is why I wrote my own script, based on the v24 backup script from Graphisoft:
 http://dl.graphisoft.com/ftp/techsupport/documentation/BIMcloud_Backup_Guide/v24PcServerAndManagerBk...
+I was unable to find a newer official template for v25 or v26. The script was tested to work with v26. 
 
- 
+The script is just a single backup.bat batch file. 
 
-I was unable to find a newer version for v25 or v26.
-But my script should work with the these.
+Please carefully read the comments in the script. Every line that starts with "REM" is a comment and not code. and adjust the paths and services accordingly. 
+Remember to always test the script and make sure it really works. I don't take any responsibility.
+
+
+Requirements that are out of the scope of this repository:
+
+- Windows task sceduler to automatically start this script in a intervall
+- Windows Services to get the service names of Graphisoft to start and stop them
