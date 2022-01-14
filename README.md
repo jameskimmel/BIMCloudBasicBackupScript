@@ -8,11 +8,11 @@ I was unable to find a newer official template for v25 or v26. The script was te
 
 The script is just a single backup.bat batch file. 
 
-Please carefully read the comments in the script. Every line that starts with "REM" is a comment and not code. and adjust the paths and services accordingly. 
+Please carefully read the comments in the script. Every line that starts with "REM" is a comment and not code. Adjust the paths and services accordingly. 
 Remember to always test the script and make sure it really works. I don't take any responsibility.
 
 
 Requirements that are out of the scope of this repository:
 
-- Windows task sceduler to automatically start this script in a intervall
+- Windows task scheduler to automatically start this script in a interval
 - Windows Services to get the service names of Graphisoft to start and stop them
