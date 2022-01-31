@@ -66,15 +66,15 @@ REM In my opinion, this is unnecessary writes. Instead of deleting everything an
 REM with the mirror option, only changed files need to be rewritten. Deleted files in the source also get deleted in the backup destination. 
 
 REM Copying the Manager's data
-robocopy "%ManagerDataDir%" "%localBkUp%\Manager\Data" /MIR
-robocopy "%ManagerDir%\Config" "%localBkUp%\Manager\Config" /MIR
+robocopy "%ManagerDataDir%" "%localBkUp%\Manager\Data" /MIR /R:10 /W:3
+robocopy "%ManagerDir%\Config" "%localBkUp%\Manager\Config" /MIR /R:10 /W:3
 
 REM Copying the Server's data
-robocopy "%ServerDir%\Config" "%localBkUp%\Server\Config" /MIR
-robocopy "%ServerDir%\Mailboxes" "%localBkUp%\Server\Mailboxes" /MIR
-robocopy "%ServerDir%\Sessions" "%localBkUp%\Server\Sessions" /MIR
-robocopy "%ProjectDir%" "%localBkUp%\Server\Projects" /MIR
-robocopy "%LibraryDir%" "%localBkUp%\Server\Attachments" /MIR
+robocopy "%ServerDir%\Config" "%localBkUp%\Server\Config" /MIR /R:10 /W:3
+robocopy "%ServerDir%\Mailboxes" "%localBkUp%\Server\Mailboxes" /MIR /R:10 /W:3
+robocopy "%ServerDir%\Sessions" "%localBkUp%\Server\Sessions" /MIR /R:10 /W:3
+robocopy "%ProjectDir%" "%localBkUp%\Server\Projects" /MIR /R:10 /W:3
+robocopy "%LibraryDir%" "%localBkUp%\Server\Attachments" /MIR /R:10 /W:3
 
 
 
