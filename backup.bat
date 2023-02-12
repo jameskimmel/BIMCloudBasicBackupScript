@@ -21,11 +21,11 @@ REM Caution! The Backup Directory has to already exist as an empty folder. The s
 set localBkUp=D:\BackupPath\BimserverBackup\Server-%ServerInstallDate%
 
 REM Caution! These services can change with every BimCloud Update! You have to look it up in the Windows "services" application. Even if you use this script
-REM To backup BimCloud 24, BIMCloud could be on a higher Version and the service name reflects that Version. By January 2022 the current version is v26. With the next update, this could change to v27!
+REM To backup BimCloud 24, BIMCloud could be on a higher Version and the service name reflects that Version. By January 2023 the current version is v27. With the next update, this could change to v28!
 REM I added additional services to the script to stop all Graphisoft Services
 
-set Manager=PortalServerService-v26.0(Manager-%ServerInstallDate%)
-set Server=TeamworkApplicationServerMonitor-v26.0(Server-%ServerInstallDate%)
+set Manager=PortalServerService-v27.0(Manager-%ServerInstallDate%)
+set Server=TeamworkApplicationServerMonitor-v27.0(Server-%ServerInstallDate%)
 
 
 REM set the delay between Services stopping and starting. Depending on how fast our Server is and how fast it can robocopy the files to the backup destination
