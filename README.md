@@ -2,9 +2,9 @@
 
 Unfortunately BIMCloud Basic has no backup option included.
 
-That is why I wrote my own script, based on the v24 backup script from Graphisoft:
+That is why I wrote my own script, based on the BimCloud v24 backup script from Graphisoft:
 http://dl.graphisoft.com/ftp/techsupport/documentation/BIMcloud_Backup_Guide/v24PcServerAndManagerBk...
-I was unable to find a newer official template for v25 or v26. The script was tested to work with v26. 
+I was unable to find a newer official template for v25 or v26. The script was tested to work with Bimcloud v26. 
 
 The script is just a single backup.bat batch file. 
 
