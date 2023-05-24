@@ -1,6 +1,6 @@
 @echo off
 
-REM Version 1.4
+REM Version 1.5
 
 REM Adjust path for the below components. Projects, Libraries, and Manager Data folders all have different locations! The services name can change after updating BIMcloud! That is why
 REM you have to check this script after every Update!
@@ -19,10 +19,10 @@ set localBkUp=D:\BackupPath\BimserverBackup\Server-%ServerInstallDate%
 
 REM Next we set names of the services.
 REM Open "services" and go to the "Graphisoft" services. You can double click on them to open them and look up the name under "Service name". 
-REM The BIMCloud naming is not the same as the Archicad naming. By February 2023 the current version is called BimCloud 2022.1 and the services end with V26. 
+REM The BIMCloud naming is not the same as the ArchiCAD naming! By May 2023 the current version is called BimCloud 2023.1 and the services end with V27. 
 REM Caution! These services can change with every BimCloud Update! 
-set Manager=PortalServerService-v26.0(Manager-%ServerInstallDate%)
-set Server=TeamworkApplicationServerMonitor-v26.0(Server-%ServerInstallDate%)
+set Manager=PortalServerService-v27.0(Manager-%ServerInstallDate%)
+set Server=TeamworkApplicationServerMonitor-v27.0(Server-%ServerInstallDate%)
 
 REM set a delay for starting and stopping services, depending on how fast our Server can star and stop services.
 set delay=60
