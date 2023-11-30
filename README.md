@@ -5,7 +5,7 @@ Unfortunately BIMCloud Basic has no backup option included.
 That is why I wrote my own script, based on the BimCloud v24 backup script from Graphisoft:
 http://dl.graphisoft.com/ftp/techsupport/documentation/BIMcloud_Backup_Guide/v24PcServerAndManagerBk...
 I was unable to find a newer official template. Please let me know if you spot a new one.
-The script was tested (24.05.2023) to work with with BIMCloud 2023.1.
+The script was tested (30.11.2023) to work with BIMCloud 2023.3.
 
 The script is just a single backup.bat batch file. 
 
@@ -16,5 +16,5 @@ Remember to always test the script and make sure it really works. I don't take a
 
 Requirements that are out of the scope of this repository:
 
-- Windows task scheduler to automatically start this script automatically 
+- Windows task scheduler to automatically start this script automatically (but you can import the BIMBackup27.xml to start with)
 - File versioning or snapshots to have multiple backup states
