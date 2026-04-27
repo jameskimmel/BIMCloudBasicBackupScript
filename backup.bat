@@ -9,7 +9,7 @@ REM Per default, this script only creates one backup state. If you wanna save mu
 REM If you need technical support or have questions you find contact information on www.salzmann.solutions
 
 REM First we set the Server installation date. This variable is used to set all Graphisoft paths accordingly. In this example, the date is 2024-11-27. Adjust it according to your installation. 
-set ServerInstallDate=2025-11-19
+set ServerInstallDate=2026-04-09
 
 REM Next we set the backup path.
 REM Caution! The Backup Directory has to already exist as an empty folder. The script will not create it and fail if it does not already exists.
@@ -19,13 +19,14 @@ set BackupDestinationFolder=D:\BimBackup\Bim29
 
 REM Next we set names of the services.
 REM Open "services" and go to the "Graphisoft" services. You can double click on them to open them and look up the name under "Service name". 
-REM The BIMCloud naming is not the same as the ArchiCAD naming! By November 2025 the current version is called BimCloud 2025.3 and the services end with V30. 
+REM The BIMCloud naming is not the same as the ArchiCAD naming! By April 2026 the current version is called BimCloud 2025.3 and the services end with V30. 
 REM Caution! These services can change with every BimCloud Update! 
+REM There are two other services names "Graphisoft Service Process Manager Agent" but stopping them is not needed, as far as I can tell.  
 set service1=PortalServerService-v30.0(Manager-%ServerInstallDate%)
 set service2=TeamworkApplicationServerMonitor-v30.0(Server-%ServerInstallDate%)
 
 REM set a delay for starting and stopping services, depending on how fast our Server can start and stop services.
-set delay=20
+set delay=60
 
 REM Editing the script below should not be necessary
 
@@ -36,7 +37,7 @@ set ServerDir=C:\Program Files\GRAPHISOFT\BIMcloud\Server-%ServerInstallDate%
 set ProjectDir=C:\Program Files\GRAPHISOFT\BIMcloud\Server-%ServerInstallDate%\Projects
 set LibraryDir=C:\Program Files\GRAPHISOFT\BIMcloud\Server-%ServerInstallDate%\Attachments
 
-REM Checking if BIMcloud Basic or the Backup folder does not exist. You must create them beforehand!
+REM Checking if BIMcloud folders exist
 if not exist "%ManagerDir%" echo Missing installation directory "%ManagerDir%"
 if not exist "%ManagerDataDir%" echo Missing installation directory "%ManagerDataDir%"
 if not exist "%ServerDir%" echo Missing installation directory "%ServerDir%"
@@ -50,12 +51,6 @@ if not exist "%ServerDir%" goto done
 if not exist "%ProjectDir%" goto done
 if not exist "%LibraryDir%" goto done
 if not exist "%BackupDestinationFolder%" goto done
-
-if not exist "%BackupDestinationFolder%\Server" md "%BackupDestinationFolder%\Server"
-if not exist "%BackupDestinationFolder%\Manager" md "%BackupDestinationFolder%\Manager"
-
-if not exist "%BackupDestinationFolder%\Server" goto done
-if not exist "%BackupDestinationFolder%\Manager" goto done
 
 REM Stopping services
 sc stop "%service1%" 
@@ -90,6 +85,4 @@ ping localhost -n %delay%
 sc start "%service1%"
 ping localhost -n %delay%
 
-
 :done
-
