@@ -1,5 +1,5 @@
 # BIMCloudBasicBackupScript
-**The script was tested on the 19.11.2025 to work with BIMCloud 2025.3.**  
+**The script was tested on the 21.04.2026 to work with BIMCloud 2025.3.**  
 
 Unfortunately BIMCloud Basic has no backup option included.  
 
@@ -19,6 +19,6 @@ Adjust the paths and services accordingly.
 To automatically start this script with Windows task scheduler, you checkout BIMBackup.xml from this repository. It should offer you a good template.  
 
 Like the original script vom ArchiCAD, this script only creates a single backup state.   
-If you want multiple backup days/states, you should consider some kind of file versioning or snapshots of your backup destination.   
+If you want multiple backup days/states, you should consider some kind of file versioning or snapshots on your backup destination.   
 Remember to always test the script and make sure it really works!  
 I don't take any responsibility. If you need technical support or have questions, please open an github issue or contact mail@salzmann.solutions  
